@@ -13,35 +13,24 @@ import {
  * See https://playwright.dev/docs/test-configuration.
  */
 export default defineConfig({
-  testDir: './tests',
-  /* Maximum time one test fcasn run for */
-  // timeout: 30 * 1000, // == 30s
-  // expect: {
-  //   /**
-  //    * Maximum time expect() should wait for the condition to bve met
-  //    * For example in `await expect(locator).toHaveText()` 
-  //   */
-  //   timeout: 5000 // The timeout for waiting for aawit to be expected for action in assertion section
-  // },
+  testDir: './my_tests',
   /* Run tests in files in parallel */
-  fullyParallel: true, // <-- runs each individual test in pararell mode 
+  fullyParallel: true,
   /* Fail the build on CI if you accidentally left test.only in the source code. */
-  forbidOnly: !!process.env.CI, // <-- used if the test only is left in the source code
+  forbidOnly: !!process.env.CI,
   /* Retry on CI only */
-  retries: process.env.CI ? 2 : 0, // <-- used for tests retry in f eg Jenkins 2 = twice in third party instance / 0 - locally - can be changed to 1
+  retries: process.env.CI ? 2 : 0,
   /* Opt out of parallel tests on CI. */
-  workers: process.env.CI ? 1 : undefined, // <-- when used third party instance can the quantity of pararell workers be changed
+  workers: process.env.CI ? 1 : undefined,
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
-  reporter: 'html', // <-- type of the tests results to be displayed
+  reporter: 'html',
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
-    /* Maximum time each action such as  `click()` can take. Defaults to 0 (no limit) */
-    // actionTimeout: 0,
     /* Base URL to use in actions like `await page.goto('/')`. */
     // baseURL: 'http://127.0.0.1:3000',
 
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
-    trace: 'on-first-retry', // <-- Thiw paraameter tesl us what exactly happened when we run the tests
+    trace: 'on-first-retry',
   },
 
   /* Configure projects for major browsers */
@@ -81,8 +70,6 @@ export default defineConfig({
     //   use: { ...devices['Desktop Chrome'], channel: 'chrome' },
     // },
   ],
-  /* Folder for test artifacts such as screenshots, videos, traces, etc. */
-  // outputDir: 'tredst-results/',
 
   /* Run your local dev server before starting the tests */
   // webServer: {
