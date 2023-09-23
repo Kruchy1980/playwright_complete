@@ -7,7 +7,10 @@ https://practice.sdetunicorns.com/
 The title of website is:
 "Practice E-Commerce Site – SDET Unicorns – Helping you succeed in Software Quality."
  */
-import { test } from '@playwright/test';
+import {
+  expect,
+  test,
+} from '@playwright/test';
 
 // here we can start to type the first test to verify propeer page title is displayed
 // Start to write the test here - only title verification
@@ -18,6 +21,7 @@ test.describe('Home', () => {
         // 1. Open the page
         await page.goto('https://practice.sdetunicorns.com/');
         // 2. Verify title assertion
+        await expect(page).toHaveTitle('Practice E-Commerce Site – SDET Unicorns – Helping you succeed in Software Quality.');
    });
     
 });
