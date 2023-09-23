@@ -167,4 +167,7 @@ export default defineConfig({
   // },
 });
 
+## Playwright documentation
+The documentation beginning from installation is under the URL: ***https://playwright.dev/docs/test-fixtures#automatic-fixtures***
+
 

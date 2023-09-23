@@ -15,14 +15,14 @@ import {
 export default defineConfig({
   testDir: './tests',
   /* Maximum time one test fcasn run for */
-  timeout: 30 * 1000, // == 30s
-  expect: {
-    /**
-     * Maximum time expect() should wait for the condition to bve met
-     * For example in `await expect(locator).toHaveText()` 
-    */
-    timeout: 5000 // The timeout for waiting for aawit to be expected for action in assertion section
-  },
+  // timeout: 30 * 1000, // == 30s
+  // expect: {
+  //   /**
+  //    * Maximum time expect() should wait for the condition to bve met
+  //    * For example in `await expect(locator).toHaveText()` 
+  //   */
+  //   timeout: 5000 // The timeout for waiting for aawit to be expected for action in assertion section
+  // },
   /* Run tests in files in parallel */
   fullyParallel: true, // <-- runs each individual test in pararell mode 
   /* Fail the build on CI if you accidentally left test.only in the source code. */
@@ -36,7 +36,7 @@ export default defineConfig({
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
     /* Maximum time each action such as  `click()` can take. Defaults to 0 (no limit) */
-    actionTimeout: 0,
+    // actionTimeout: 0,
     /* Base URL to use in actions like `await page.goto('/')`. */
     // baseURL: 'http://127.0.0.1:3000',
 
