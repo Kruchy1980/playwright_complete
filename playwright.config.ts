@@ -14,7 +14,7 @@ import {
  */
 export default defineConfig({
   testDir: './my_tests',
-  /* Maximum time one test fcasn run for */
+  /* Maximum time one test asn run for */
   timeout: 30 * 1000, // == 30s
   expect: {
     /**
@@ -46,14 +46,14 @@ export default defineConfig({
 
   /* Configure projects for major browsers */
   projects: [
-    {
-      name: 'chromium',
-      use: {
-        ...devices['Desktop Chrome'],
-        headless: false
-      },
+    // {
+    //   name: 'chromium',
+    //   use: {
+    //     ...devices['Desktop Chrome'],
+    //     headless: false
+    //   },
 
-    },
+    // },
 
     // {
     //   name: 'firefox',
@@ -80,10 +80,13 @@ export default defineConfig({
     //   name: 'Microsoft Edge',
     //   use: { ...devices['Desktop Edge'], channel: 'msedge' },
     // },
-    // {
-    //   name: 'Google Chrome',
-    //   use: { ...devices['Desktop Chrome'], channel: 'chrome' },
-    // },
+    {
+      name: 'Google Chrome',
+      use: { ...devices['Desktop Chrome'],
+       channel: 'chrome',
+        headless: false
+       },
+    },
   ],
 
   /* Folder for test artifacts such as screenshots, videos, traces, etc. */
