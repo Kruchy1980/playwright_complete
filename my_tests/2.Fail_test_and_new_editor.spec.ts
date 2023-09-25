@@ -16,9 +16,20 @@ test.describe('Failed - Negative path', () => {
     test('Failed tritle verifcation', async ({ page }) => {
         //1. Go to the specific page
         await page.goto('https://practice.sdetunicorns.com/');
-        // Create failed assertion for title
+        //2. Create failed assertion for title
         await expect(page).toHaveTitle('Failed title in here')
     }); 
+  // Let's fix the test
+  test('Proper title positive path', async ({ page }) => {
+      // 1. Go to the specific page
+      await page.goto('https://practice.sdetunicorns.com/');
+      // 2. Create assertion of proper title
+      await expect(page).toHaveTitle('Practice E-Commerce Site – SDET Unicorns – Helping you succeed in Software Quality.');
+  });
+
 });
+/*
+The failed test repoert will be displayed in the report with bug of wrong title asserrion displayed with all the paths described very clearly  
+*/
 
 
