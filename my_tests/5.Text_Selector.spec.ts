@@ -12,9 +12,13 @@ test.describe('Text Selectors', () => {
    test('Verift header textr', async ({ page }) => {
         // 1. Open the proper page
         await page.goto('https://practice.sdetunicorns.com/');
-        // 2. find the text locator firsdtly create variable
-        const headingText = await page.locator('text=Think different. Make different.');
+        // 2. find the text locator firstly create variable - case insensitive matching
+        const headingText = await page.locator('text=think different. Make different.'); // this matching is case insensitive
         // 3. Verify whether heading text is visible
         await expect(headingText).toBeVisible();
+        // 4. Find exact (case sensitive) locator here "<vqalue>" -  the quotes means exact match which is case sensitive
+        const cSensitiveHeadingText = await page.locator('text="Think different. Make different."');
+        // 5. Verify the case sensitive header text
+        await expect(cSensitiveHeadingText).toBeVisible();
    }); 
 });
