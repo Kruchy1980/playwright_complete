@@ -17,7 +17,5 @@ test.describe('Css_Selectors usage', () => {
         await expect(page).toHaveURL('https://practice.sdetunicorns.com/#get-started');
         // 4. Verify url has #get-started using regexp
         await expect(page).toHaveURL(/.*#get-started/);
-
-   })
-    
+   });
 });
