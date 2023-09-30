@@ -12,7 +12,7 @@ test.describe('Css_Selectors usage', () => {
         // 1. Open the page
         await page.goto('https://practice.sdetunicorns.com/');
         // 2. Localize the Get Started button and click it
-        await page.locator('#get-started').click();
+        page.locator('#get-started').click();
         // 3. Verify url has #get-started without using regexp
         await expect(page).toHaveURL('https://practice.sdetunicorns.com/#get-started');
         // 4. Verify url has #get-started using regexp

@@ -1,4 +1,5 @@
 // THE FIRST TEST ADDED FOR VERIFICATION PAGE TITLE ONLY
+// !!! IMPORTANT ALWAYS WHERE PROMISES ARE NOT RETURNED WE DO NOT NEED TO USE "AWAIT" FOR OPERATION
 /* To start writing the tests firstly we need to import proper modules, where:
 expect - for assertions
 test - for writing tests

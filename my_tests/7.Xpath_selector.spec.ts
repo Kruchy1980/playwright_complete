@@ -14,13 +14,12 @@ test.describe('Usage of xpat selector', () => {
       await page.goto('https://practice.sdetunicorns.com/');
       // 2. Select element "search-icon" on the page using xpath selector
       await page.locator('//*[@class="zakra-icon--magnifying-glass"]').isVisible();
-      // 3. Other verification of displayed element - variable preparation
-      const sectionTitle = await page.locator('//*[@id="primary"]/div/section[1]/div/div/div/div[1]/div/h3/div/h2/span');
+      // 3. Other verification of displayed element - variable preparation 
+      const sectionTitle = page.locator('//*[@id="primary"]/div/section[1]/div/div/div/div[1]/div/h3/div/h2/span');
       // 4. Assertion for element with xpath locator used
       await expect(sectionTitle).toBeVisible();
-      // !!5. The problem with search icon solution
-      // const searchIcon = await page.locator('.zakra-icon--magnifying-glass').isVisible();
-      const searchIcon = await page.locator('#zak-masthead > div > div > div > div.zak-header-col.zak-header-col--2 > div.zak-header-actions.zak-header-actions--desktop > div.zak-header-action.zak-header-search > a > svg') //.isVisible();
+      // !!5. The problem with search icon solution is to use css selectors
+      const searchIcon = page.locator('#zak-masthead > div > div > div > div.zak-header-col.zak-header-col--2 > div.zak-header-actions.zak-header-actions--desktop > div.zak-header-action.zak-header-search > a > svg');
       // II6. Assertion try
       await expect(searchIcon).toBeVisible();
    })
