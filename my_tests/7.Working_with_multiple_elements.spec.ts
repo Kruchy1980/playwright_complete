@@ -42,6 +42,7 @@ test.describe('Working with multiple elements', () => {
         // Printing out all the links the elementHandkes() gives access to each element of Node list
         for (const el of await navLinks.elementHandles()) {
             console.log(await el.textContent());
+            // To finish tomorrow or next day
         };
     });
 });
