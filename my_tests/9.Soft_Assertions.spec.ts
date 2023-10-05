@@ -22,7 +22,6 @@ test.describe('Soft assertions clarification', () => {
         await page.locator('.contact-name input').fill('Test Name');
         await page.locator('.contact-email input').fill('test@mail.com');
         await page.locator('.contact-phone input').fill('134567864');
-        await page.locator('.contact-message textarea').focus();
         await page.locator('.contact-message textarea').fill('This is a test message My JK');
 
         // add a soft assertion - negative path
