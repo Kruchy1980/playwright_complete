@@ -52,5 +52,7 @@ test.describe('Upload file test', () => {
         })
         // 4. Upload test file
         await page.setInputFiles('#upfile_1', filePath); // Throws an error
+        // 5. Create an assertion to verify proper result
+        await expect(page.locator('#wfu_messageblock_header_1_label_1')).toContainText('uploaded successfully');
    });
 });
