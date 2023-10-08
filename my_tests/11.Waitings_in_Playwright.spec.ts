@@ -86,12 +86,38 @@ Maximum time in milliseconds. Defaults to 0 - no timeout. The default value can 
         // Create cvariable of locator
         const messageDisplayed = page.locator('#wfu_messageblock_header_1_label_1');
         // Wait for condition to be met
+        // !!! The .waitFor() as default is the same time which is set in playwright.config.ts so in our case it is 30s but using objecr with specific settings allows us to modify the timeout and verifies proper state of needed element 
         await messageDisplayed.waitFor({state: 'visible', timeout: 10000}); // it waits for element to be visible but max 10000ms as timeout says (if the )
         // 6. Create assertion
         await expect(messageDisplayed).toContainText('uploaded successfully');
 
     });
+    /* ============ WAITING FOR ASSERTRION ========================
+     
+    */    
+    test('Waiting for assertion good method as well', async ({ page }) => {
+        // 1. Go to cart page
+        await page.goto('https://practice.sdetunicorns.com/cart');
+        // 2. Provide the file variable for 3mb_file.pdf
+        const filePdfPath = path.join(__dirname, '../data/3mb_file.pdf');
+        // 3. Upload the file
+        await page.setInputFiles('#upfile_1', filePdfPath);
+        // 4. Click the submit button
+        await page.locator('#upload_1').click();
+        // 5. During the assertion we can use timeout as well
+        /* The timeout we are playing with as assertion timeout is situated in plqyright.config.ts under the expect object in define Config
+        We can dynamicqlly change it during the test:
+        Object which we are playint with in here
+        File: playwright.config.ts
+          expect: {
+            Maximum time expect() should wait for the condition to bve met
+            For example in `await expect(locator).toHaveText()` 
     
-    
+            timeout: 5000 // The timeout for waiting for aawit to be expected for action in assertion section
+            },
+            */
+        // 5-cont. How to change timeout which can be passed for assertion directly as timeout argument passed as an object as showed in follwing example.
+        await expect(page.locator('#wfu_messageblock_header_1_label_1')).toContainText('uploaded successfully', {timeout: 8000});
+    })
 });
 
