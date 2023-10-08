@@ -44,6 +44,8 @@ export default defineConfig({
     trace: 'on-first-retry', // <-- Thiw paraameter tesl us what exactly happened when we run the tests
   },
 
+
+
   /* Configure projects for major browsers */
   projects: [
     // {

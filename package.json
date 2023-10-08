@@ -11,5 +11,8 @@
     "@playwright/test": "^1.38.1",
     "@types/node": "^20.8.3",
     "require": "^0.4.4"
+  },
+  "compilerOptions": {
+    "types": ["node"]
   }
 }
