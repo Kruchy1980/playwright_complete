@@ -1,5 +1,5 @@
 // Import path from path from playwright
-import path from 'path';
+import * as path from 'path';
 
 //THIS PART IS DEDICATED TO EXPLAIN WAIT COMMANDS IN PLAYWRIGHT AS LISTED BELOW
 /*
@@ -80,6 +80,15 @@ Maximum time in milliseconds. Defaults to 0 - no timeout. The default value can 
         const filePdfPath = path.join(__dirname, '../data/3mb_file.pdf');
         // 3. Upload the file
         await page.setInputFiles('#upfile_1', filePdfPath);
+        // 4. Click the submit button
+        await page.locator('#upload_1').click();
+        // 5. wait for condition to be met for assertrion
+        // Create cvariable of locator
+        const messageDisplayed = page.locator('#wfu_messageblock_header_1_label_1');
+        // Wait for condition to be met
+        await messageDisplayed.waitFor({state: 'visible', timeout: 10000}); // it waits for element to be visible but max 10000ms as timeout says (if the )
+        // 6. Create assertion
+        await expect(messageDisplayed).toContainText('uploaded successfully');
 
     });
     
