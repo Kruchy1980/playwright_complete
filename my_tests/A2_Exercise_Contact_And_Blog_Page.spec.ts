@@ -1,4 +1,4 @@
-// EXERCISED: CONTACG & BLOG PAGE
+// EXERCISED: CONTACG & BLOG PAGE - To finish during weekend
 //The Page URL Main Address: "https://practice.sdetunicorns.com/"
 // Firstly import the needed modules from playwright
 /* First Contact Page:
