@@ -41,7 +41,7 @@ export default defineConfig({
     // baseURL: 'http://127.0.0.1:3000',
 
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
-    trace: 'on-first-retry', // <-- Thiw paraameter tesl us what exactly happened when we run the tests
+    trace: 'on', // <-- Thiw paraameter tesl us what exactly happened when we run the tests - explained in the file "12.Debug_Console.spec.ts"
   },
 
 
