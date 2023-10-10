@@ -91,37 +91,37 @@ test.describe('Css_Selectors usage', () => {
     PWDEBUG=1  npx playwright test "12.Debug_Console.spec.ts" -g "Css_Selectors\s+usage\s+Playwright\s+Playwright\s+inspector$"
     */
   });
-  // With Recorder
-  test('Done with recorder', async ({ page }) => {
-    const { chromium } = require('playwright');
+  // // With Recorder
+  // test('Done with recorder', async ({ page }) => {
+  //   const { chromium } = require('playwright');
 
-    (async () => {
-      const browser = await chromium.launch({
-        headless: false
-      });
-      const context = await browser.newContext();
-      await page.getByLabel('Name *').click();
-      await page.getByLabel('Name *').fill('My name');
-      await page.getByLabel('Email *').click();
-      await page.getByLabel('Email *').fill('my_email@gmail.com');
-      await page.getByLabel('Phone *').click();
-      await page.getByLabel('Phone *').fill('98763423');
-      await page.getByLabel('Message').click();
-      await page.getByLabel('Message').fill('My recorder message');
-      // Add first assertion here
-      await expect(page.getByLabel('Message')).toHaveText('My recorder message');
+  //   (async () => {
+  //     const browser = await chromium.launch({
+  //       headless: false
+  //     });
+  //     const context = await browser.newContext();
+  //     await page.getByLabel('Name *').click();
+  //     await page.getByLabel('Name *').fill('My name');
+  //     await page.getByLabel('Email *').click();
+  //     await page.getByLabel('Email *').fill('my_email@gmail.com');
+  //     await page.getByLabel('Phone *').click();
+  //     await page.getByLabel('Phone *').fill('98763423');
+  //     await page.getByLabel('Message').click();
+  //     await page.getByLabel('Message').fill('My recorder message');
+  //     // Add first assertion here
+  //     await expect(page.getByLabel('Message')).toHaveText('My recorder message');
 
-      await page.getByRole('button', { name: 'Submit' }).click();
+  //     await page.getByRole('button', { name: 'Submit' }).click();
 
-      const successText = await page.getByText('Thanks for contacting us! We will be in touch with you shortly');
-      // Add other assertion
-      await expect(successText).toHaveText('Thanks for contacting us! We will be in touch with you shortly');
-      // Only add the assertion one
+  //     const successText = await page.getByText('Thanks for contacting us! We will be in touch with you shortly');
+  //     // Add other assertion
+  //     await expect(successText).toHaveText('Thanks for contacting us! We will be in touch with you shortly');
+  //     // Only add the assertion one
 
-      // ---------------------
-      await context.close();
-      await browser.close();
-    })();
+  //     // ---------------------
+  //     await context.close();
+  //     await browser.close();
+  //   })();
 
 
-  });
+});
