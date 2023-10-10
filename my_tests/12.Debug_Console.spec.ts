@@ -38,14 +38,19 @@ test.describe('Css_Selectors usage', () => {
     // 1. Prepare the test
     test('Playwright Trace Viewer', async ({ page }) => {
          // 1. Open the page
-         await page.goto('https://practice.sdetunicorns.com/');   
+         await page.goto('https://practice.sdetunicorns.com/contact');   
          // 2. Fill out the input fields
          await page.locator('.contact-name input').fill('Test Name_2')  
          await page.locator('.contact-email input').fill('test_deb@mail.com');
          await page.locator('.contact-phone input').fill('134567864');
          await page.locator('.contact-message textarea').fill('This is a test message for "Trace viewer"');
-         //3. Add a soft assertrion
+         // 3. Add a soft assertrion
          await expect.soft(page.locator('.contact-message textarea')).toHaveText('This is a test message for "Trace viewer"');
+         // 4.Click submit
+         await page.locator('button[type=submit]').click();
+         // 5. Verify sudddess message
+         const successAlert = page.locator('div[role="alert"]');
+         await expect(successAlert).toHaveText('Thanks for contacting us! We will be in touch'); 
          // Now by knowing that that test is going to fail we can ser in "playwright.config.ts" the trace to be 'on' (always)
          /*
          Available options to record a trace:
@@ -58,6 +63,7 @@ test.describe('Css_Selectors usage', () => {
             You can also use trace: 'retain-on-failure' if you do not enable retries but still want traces for failed tests.
 
             If you are not using Playwright as a Test Runner, use the browserContext.tracing API instead. 
+            !!! When we set all now we can simply run the test in the VSCode
          */
     });
     
