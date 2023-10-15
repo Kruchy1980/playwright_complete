@@ -113,7 +113,7 @@ Maximum time in milliseconds. Defaults to 0 - no timeout. The default value can 
             Maximum time expect() should wait for the condition to bve met
             For example in `await expect(locator).toHaveText()` 
     
-            timeout: 5000 // The timeout for waiting for aawit to be expected for action in assertion section
+            timeout: 5000 // The timeout for waiting for await to be expected for action in assertion section
             },
             */
         // 5-cont. How to change timeout which can be passed for assertion directly as timeout argument passed as an object as showed in follwing example.
