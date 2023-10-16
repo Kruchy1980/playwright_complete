@@ -12,7 +12,16 @@ import HomePage from '../pages/1.home.page';
 // Create the test Suite for our HomePage
 test.describe('Home Page Tests', () => {
     // Here declare variable which will store our constructor (now empty variable only)
-    let homePage; // Remember that acces to our page is only in the test block not here so here we can not assign the constructor
+    let homePage: HomePage; // Remember that acces to our page is only in the test block not here so here we can not assign the constructor
+    // For the links names verirfication we can declare here proper array with links names
+    const expectedLinks = [
+      'Home',
+      'About',
+      'Shop',
+      'Blog',
+      'Contact',
+      'My account'
+  ];
     // Now we can start to prepare our first test "Open HomePage and verify the title"
     test('Open HomePage and verify the title', async ({ page }) => {
         // !! The first thing in hetre we need to create new page constructor based on our class befor start the test creation
@@ -80,20 +89,52 @@ test.describe('Home Page Tests', () => {
         await expect(homeTextAlternate_two).toBeEnabled();
     });
     test('Verify Search icon is visible using xpath selector and css selector', async ({ page }) => {
-        // 1. Go to proper page
-        await page.goto('https://practice.sdetunicorns.com/');
-        // 2. Select element "search-icon" on the page using xpath selector
-        const searchIcon = page.locator('//*[@class="zakra-icon--magnifying-glass"]').isVisible();
-        // await expect(searchIcon).isVisible();
-        // 3. Other verification of displayed element - variable preparation 
-        const sectionTitle = page.locator('//*[@id="primary"]/div/section[1]/div/div/div/div[1]/div/h3/div/h2/span');
-        // 4. Assertion for element with xpath locator used
-        await expect(sectionTitle).toBeVisible();
-        // !!5. The problem with search icon solution is to use css selectors
-        // const searchIcon = page.locator('#zak-masthead > div > div > div > div.zak-header-col.zak-header-col--2 > div.zak-header-actions.zak-header-actions--desktop > div.zak-header-action.zak-header-search > a > svg');
-        // // II6. Assertion try
-        // await expect(searchIcon).toBeVisible();
-     });
-    
+      homePage = new HomePage(page);
+      // 1. Go to proper page
+      await page.goto('https://practice.sdetunicorns.com/');
+      // 2. Select element "search-icon" on the page using css selector
+      // const searchIcon = page.locator('#zak-masthead > div > div > div > div.zak-header-col.zak-header-col--2 > div.zak-header-actions.zak-header-actions--desktop > div.zak-header-action.zak-header-search > a > svg'); //.isVisible();
+      const searchIcon = await homePage.searchIcon;
+      await expect(searchIcon).toBeVisible();
+      // 3. Other verification of displayed element - variable preparation 
+      // const sectionTitle = page.locator('//*[@id="primary"]/div/section[1]/div/div/div/div[1]/div/h3/div/h2/span');
+      const sectionTitle = await homePage.sectionTitle;
+      // 4. Assertion for element with xpath locator used
+      await expect(sectionTitle).toBeVisible();
+      // !!5. The problem with search icon solution is to use xpath selectors
+      // const searchIcon = page.locator('//*[@id="zak-masthead"]/div/div/div/div[2]/div[1]/div[1]/a/svg');
+      // const searchIconAlt = await homePage.searchIconAlt;
+      // // // II6. Assertion try
+      // await expect(searchIconAlt).toBeVisible();
+    });
+    test('Finding all elements of the list texts', async ({ page }) => {
+      // !! homePage preparation
+      homePage = new HomePage(page);
+      // 1. Go to specified page
+      await page.goto('https://practice.sdetunicorns.com/');
+      // 2. Find the nav links - the await is not needed for locators because it is not a promise
+      // const navLinks =  page.locator('#zak-primary-menu li[id*=menu-item]');
+      const navLinks = await homePage.navLink;
+      // 3. Verify the nav links texts - the method allTextContents() returns Node list and method toEqual() compare the list with expected one. We need to wait until all of the elements show on the page so we are using await inside expect assertion because this assertion is not a promise anymore.
+      expect(await navLinks.allTextContents()).toEqual(expectedLinks);
+      // !! To verify specific element only we can use nth(<value of element>) as is possible in node list
+      // 4. Prepare locator for the 4th element "Contact" in the list - one specific element only
+      // const navSpecificLinkText = page.locator('#zak-primary-menu li[id*=menu-item]').nth(4);
+      const navSpecificLinkText = await navLinks.nth(4);
+      // 5. Prepare verification of the specific element name
+      expect(await navSpecificLinkText.textContent()).toEqual('Contact');
+      //OR
+      expect(await navSpecificLinkText.textContent()).toEqual(expectedLinks[4]);
+      // So we can use loop to verify simple elements content
+      for (let i = 0; i< expectedLinks.length; i++) {
+          const allElementsSingulary = page.locator('#zak-primary-menu li[id*=menu-item]').nth(i);
+          expect(await allElementsSingulary.textContent()).toEqual(expectedLinks[i]);
+      };
+      // Printing out all the links the elementHandkes() gives access to each element of Node list
+      for (const el of await navLinks.elementHandles()) {
+        console.log(await el.textContent());
+        // To finish tomorrow or next day
+      };
+    });   
 
 });

@@ -11,12 +11,14 @@ class HomePage {
     headingText: any;
     homeLink: any;
     searchIcon: any;
-    navLinks: any;
+    navLink: any;
     cSensitiveHeadingText: any;
     homeText: any;
     homeTextAlternate: any;
     homeTextAlternate_two: any;
     homeText_1: any;
+    sectionTitle: any;
+    searchIconAlt: any;
     // 2. Ccreate a constructor in the class which will store all of the needed locators - remember we arew using typescript here
     constructor(page: Page) {
         this.page = page; // the constructor for identify the page in the tests
@@ -28,12 +30,14 @@ class HomePage {
 
         this.homeLink = page.locator('#zak-primary-menu:has-text("Home")');
         // this.homeLink = page.locator('#zak-primary-menu >> text=Home');
-        this.searchIcon = page.locator('//*[@id="primary-menu"]//*[@class="tg-icon tg-icon-search"]');
-        this.navLinks = page.locator('#primary-menu li[id*=menu]');
+        this.searchIcon = page.locator('#zak-masthead > div > div > div > div.zak-header-col.zak-header-col--2 > div.zak-header-actions.zak-header-actions--desktop > div.zak-header-action.zak-header-search > a > svg');
+        this.searchIconAlt = page.locator('//*[@id="zak-masthead"]/div/div/div/div[2]/div[1]/div[1]/a/svg');
+        this.navLink = page.locator('#zak-primary-menu li[id*=menu-item]');
         this.cSensitiveHeadingText = page.locator('text="Think different. Make different."');
         this.homeText_1 = page.locator('#zak-primary-menu >> text=Home');
         this.homeTextAlternate = page.locator('#zak-primary-menu:has-text("Home")');
         this.homeTextAlternate_two = page.locator('#zak-primary-menu :text-is("Home")');
+        this.sectionTitle = page.locator('//*[@id="primary"]/div/section[1]/div/div/div/div[1]/div/h3/div/h2/span');
         //======== The whole part above - the constructor is the bqasic page templatge and this is something that we are going to use for all the page files that we are going to be created. 
     };
 };

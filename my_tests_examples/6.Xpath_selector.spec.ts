@@ -22,7 +22,7 @@ test.describe('Usage of xpat selector', () => {
       const searchIcon = page.locator('#zak-masthead > div > div > div > div.zak-header-col.zak-header-col--2 > div.zak-header-actions.zak-header-actions--desktop > div.zak-header-action.zak-header-search > a > svg');
       // II6. Assertion try
       await expect(searchIcon).toBeVisible();
-   })
+   });
 });
 /*
 There is problem with assertion for xpath to be used for the icon visibility
