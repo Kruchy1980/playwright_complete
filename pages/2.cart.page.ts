@@ -15,7 +15,7 @@ class CartPage {
     };
     // We can add navigate method for navigating to the proper page
     async navigateCart() {
-        await this.page.goto('https://practice.sdetunicorns.com/cart/'); 
+        await this.page.goto('/cart/'); 
     }
     // !! After the component preparation we can us a component in here
     // Add method here wg=huch rweturns the instance of component prepared in the Upload component file

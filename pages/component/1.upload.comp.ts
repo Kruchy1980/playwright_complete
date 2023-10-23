@@ -20,16 +20,16 @@ class UploadComponent {
         this.uploadInput = '#upfile_1';
         this.submitBtn = page.locator('#upload_1');
         this.successText = page.locator('#wfu_messageblock_header_1_label_1');
-    };
+    }
     // Prepare the method which will upload the files
     async uploadFile(filePath: string) {
                 // 3. Upload test file using prepared variables in constructor
                 await this.page.setInputFiles(this.uploadInput, filePath);
                 // 4. Click the submit button using locator attached to this file
                 await this.submitBtn.click();
-    };
+    }
     // With such prepared method we can use it to shortened the uploading file test
-};
+}
 
 // Exporting the class for global usage:
 export default UploadComponent;

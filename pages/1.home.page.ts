@@ -43,16 +43,16 @@ class HomePage {
         this.homeTextAlternate_two = page.locator('#zak-primary-menu :text-is("Home")');
         this.sectionTitle = page.locator('//*[@id="primary"]/div/section[1]/div/div/div/div[1]/div/h3/div/h2/span');
         //======== The whole part above - the constructor is the bqasic page templatge and this is something that we are going to use for all the page files that we are going to be created. 
-    };
-    // Adding methods in here as asybnjchronous method for navigation
+    }
+    // Adding methods in here as asynchronous method for navigation
     async navigate() {
-        await this.page.goto('https://practice.sdetunicorns.com/'); 
+        await this.page.goto('/'); 
     }
     // Getting navLinks Texts
     async getNavLinksText() {
         return this.navLink.allInnerTexts();
     }
-};
+}
 
 // Export the class to be visible from other folders
 export default HomePage;
