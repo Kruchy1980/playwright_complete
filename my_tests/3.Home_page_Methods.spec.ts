@@ -74,22 +74,22 @@ import HomePage from '../pages/1.home.page';
             await page.goto('https://practice.sdetunicorns.com/home');
             // 2. Find Home button on the page using  css id and verification via Text
             // const homeText = page.locator('#zak-primary-menu >> text=Home');
-            const homeText = await homePage.homeText_1;
+            const homeText = homePage.homeText_1;
             // 3. Verify home text is enabled
             await expect(homeText).toBeEnabled();
             // 4. Find Home button on the page using  css id and verification via Text
             // const homeText_Link = page.locator('#zak-primary-menu:has-text("Home")');
-            const homeText_Link = await homePage.homeLink;
+            const homeText_Link = homePage.homeLink;
             // 5. Verify home text is enabled
             await expect(homeText_Link).toBeEnabled();
             // 6. Find Home button on the page using  css id and verification via Text alternate way
             // const homeTextAlternate = page.locator('#zak-primary-menu:has-text("Home")');
-            const homeTextAlternate = await homePage.homeTextAlternate;
+            const homeTextAlternate = homePage.homeTextAlternate;
             // 7. Verify home text is enabled
             await expect(homeTextAlternate).toBeEnabled();
             // 8. Find Home button on the page using  css id and verification via Text - somwhere in between the element with id = zak-primary-menu
             // const homeTextAlternate_two = page.locator('#zak-primary-menu :text-is("Home")');
-            const homeTextAlternate_two = await homePage.homeTextAlternate_two;
+            const homeTextAlternate_two = homePage.homeTextAlternate_two;
             // 7. Verify home text is enabled
             await expect(homeTextAlternate_two).toBeEnabled();
         });
@@ -99,11 +99,11 @@ import HomePage from '../pages/1.home.page';
           await page.goto('https://practice.sdetunicorns.com/');
           // 2. Select element "search-icon" on the page using css selector
           // const searchIcon = page.locator('#zak-masthead > div > div > div > div.zak-header-col.zak-header-col--2 > div.zak-header-actions.zak-header-actions--desktop > div.zak-header-action.zak-header-search > a > svg'); //.isVisible();
-          const searchIcon = await homePage.searchIcon;
+          const searchIcon = homePage.searchIcon;
           await expect(searchIcon).toBeVisible();
           // 3. Other verification of displayed element - variable preparation 
           // const sectionTitle = page.locator('//*[@id="primary"]/div/section[1]/div/div/div/div[1]/div/h3/div/h2/span');
-          const sectionTitle = await homePage.sectionTitle;
+          const sectionTitle = homePage.sectionTitle;
           // 4. Assertion for element with xpath locator used
           await expect(sectionTitle).toBeVisible();
           // !!5. The problem with search icon solution is to use xpath selectors
@@ -125,23 +125,23 @@ import HomePage from '../pages/1.home.page';
           // !! To verify specific element only we can use nth(<value of element>) as is possible in node list
           // 4. Prepare locator for the 4th element "Contact" in the list - one specific element only
           // const navSpecificLinkText = page.locator('#zak-primary-menu li[id*=menu-item]').nth(4);
-          const navSpecificLinkText = await navLinks.nth(4);
+          const navSpecificLinkText = navLinks.nth(4);
           // 5. Prepare verification of the specific element name
-          expect(await navSpecificLinkText.textContent()).toEqual('Contact');
+          await expect(navSpecificLinkText).toHaveText('Contact');
           //OR
-          expect(await navSpecificLinkText.textContent()).toEqual(expectedLinks[4]);
+          await expect(navSpecificLinkText).toHaveText(expectedLinks[4]);
           // So we can use loop to verify simple elements content
           for (let i = 0; i< expectedLinks.length; i++) {
               const allElementsSingulary = page.locator('#zak-primary-menu li[id*=menu-item]').nth(i);
-              expect(await allElementsSingulary.textContent()).toEqual(expectedLinks[i]);
-          };
+              await expect(allElementsSingulary).toHaveText(expectedLinks[i]);
+          }
           // Using our method declared in Class HomePage we can simply verify all text content using the declared method
           expect(await homePage.getNavLinksText()).toEqual(expectedLinks);
           // Printing out all the links the elementHandkes() gives access to each element of Node list
           for (const el of await navLinks.elementHandles()) {
             console.log(await el.textContent());
             // To finish tomorrow or next day
-          };
+          }
         });   
     
     });

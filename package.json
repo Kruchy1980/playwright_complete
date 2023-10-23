@@ -10,9 +10,15 @@
   "devDependencies": {
     "@playwright/test": "^1.38.1",
     "@types/node": "^20.8.3",
+    "@typescript-eslint/eslint-plugin": "^6.8.0",
+    "@typescript-eslint/parser": "^6.8.0",
+    "eslint": "^8.52.0",
+    "eslint-plugin-playwright": "^0.18.0",
     "require": "^0.4.4"
   },
   "compilerOptions": {
-    "types": ["node"]
+    "types": [
+      "node"
+    ]
   }
 }

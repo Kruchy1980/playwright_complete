@@ -1,4 +1,5 @@
-// PART DEDICATE TO EXPLAIN HOW THE POM (PAGE OBJECT MODEL) WORKS IN HERE
+// PART DEDICATE TO EXPLAIN HOW TO ENABLE AUTO COMPLETION IMP0RTED VARIABLES FROM FILES
+// !!!!! For getting the autocompletion from HomePage file home.page.ts
 // URL used: "https://practice.sdetunicorns.com/"
 // Import the main Playwright modules
 import {
@@ -12,7 +13,7 @@ import HomePage from '../pages/1.home.page';
 // Create the test Suite for our HomePage
   test.describe('Home Page Tests', () => {
       // Here declare variable which will store our constructor (now empty variable only)
-      let homePage: HomePage; // Remember that acces to our page is only in the test block not here so here we can not assign the constructor
+      let homePage: HomePage; // !!! Remember that acces to our page is only in the test block not here so here we can not assign the constructor The class must be addded to see the autocompletion from homePage instance Creator
       // For the links names verirfication we can declare here proper array with links names
       const expectedLinks = [
         'Home',
@@ -53,7 +54,9 @@ import HomePage from '../pages/1.home.page';
       await page.goto('https://practice.sdetunicorns.com/');
       // 2. find the text locator firstly create variable - case insensitive matching
       // const headingText = page.locator('text=think different. Make different.'); // this matching is case insensitive
-      const headingText = await homePage.headingText
+    //   const headingText = await homePage.headingText
+        // After correction in home.page.ts file and in Autocompletion_from_page Tests file we can now see the autocompletion for specific class instance usind the following variable creation
+        const headingText = homePage.headingText;
       // 3. Verify whether heading text is visible
       await expect(headingText).toBeVisible();
       // 4. Find exact (case sensitive) locator here "<value>" -  the quotes means exact match which is case sensitive
@@ -120,21 +123,21 @@ import HomePage from '../pages/1.home.page';
         // !! To verify specific element only we can use nth(<value of element>) as is possible in node list
         // 4. Prepare locator for the 4th element "Contact" in the list - one specific element only
         // const navSpecificLinkText = page.locator('#zak-primary-menu li[id*=menu-item]').nth(4);
-        const navSpecificLinkText = await navLinks.nth(4);
+        const navSpecificLinkText =  navLinks.nth(4);
         // 5. Prepare verification of the specific element name
-        expect(await navSpecificLinkText.textContent()).toEqual('Contact');
+        await expect(navSpecificLinkText).toHaveText('Contact');
         //OR
-        expect(await navSpecificLinkText.textContent()).toEqual(expectedLinks[4]);
+        await expect(navSpecificLinkText).toHaveText(expectedLinks[4]);
         // So we can use loop to verify simple elements content
         for (let i = 0; i< expectedLinks.length; i++) {
             const allElementsSingulary = page.locator('#zak-primary-menu li[id*=menu-item]').nth(i);
-            expect(await allElementsSingulary.textContent()).toEqual(expectedLinks[i]);
-        };
+            await expect(allElementsSingulary).toHaveText(expectedLinks[i]);
+        }
         // Printing out all the links the elementHandkes() gives access to each element of Node list
         for (const el of await navLinks.elementHandles()) {
           console.log(await el.textContent());
           // To finish tomorrow or next day
-        };
+        }
       });   
   
   });
