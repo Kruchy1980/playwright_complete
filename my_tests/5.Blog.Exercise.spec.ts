@@ -20,9 +20,9 @@ test.describe('Blog', () => {
     // const recentPostsList = blogPage.recentPostsList;
 
     // loop through the list and assert the char length > 10
-    // for (const el of await recentPostsList.elementHandles()) {
-    //   expect(((await el.textContent()).trim()).length).toBeGreaterThan(10)
-    // }
+    for (const el of await blogPage.recentPostsList.elementHandles()) {
+      expect(((await el.textContent())!.trim()).length).toBeGreaterThan(10) // The "!" is added to avoid error when the textContent is null
+    }
 
     // assert the total length = 5
     expect(await blogPage.recentPostsList.count()).toEqual(5)

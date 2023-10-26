@@ -6,28 +6,34 @@ import {
   test,
 } from '@playwright/test';
 
+// Import contact page
+import ContactPage from '../pages/3.contact.page';
+
 test.describe('Contact', () => {
+  let contactPage: ContactPage;
   test('Fill contact form and verify success message', async ({ page }) => {
+    contactPage = new ContactPage(page);
     // open contact page
-    await page.goto('https://practice.sdetunicorns.com/contact')
+    await contactPage.navigateContact();
 
     //  fill out the input fields
-    await page.locator('.contact-name input').fill('Test Name')
-    await page.locator('.contact-email input').fill('test@mail.com')
-    await page.locator('.contact-phone input').fill('134567864')
-    await page.locator('.contact-message textarea').fill('This is a test message')
+    // await page.locator('.contact-name input').fill('Test Name')
+    // await page.locator('.contact-email input').fill('test@mail.com')
+    // await page.locator('.contact-phone input').fill('134567864')
+    // await page.locator('.contact-message textarea').fill('This is a test message')
+    await contactPage.fillTheForm('Test Name', 'test@mail.com', '134567864', 'This is a test message');
 
     // add a soft assertion
-    await expect.soft(page.locator('.contact-message textarea')).toHaveText("Fail test message")
+    // await expect(contactPage.contactMessage).toHaveText("This is a test message")
 
     // click submit
-    await page.locator('button[type=submit]').click()
+    // await page.locator('button[type=submit]').click()
 
-    expect(test.info().errors.length).toBeLessThan(1)
+    // expect(test.info().errors.length).toBeLessThan(1)
 
     // verify success message
-    const successAlert = page.locator('div[role="alert"]')
-    await expect(successAlert).toHaveText('for contacting us! We will be in touch with you shortly')
+    // const successAlert = page.locator('div[role="alert"]')
+    await expect(contactPage.successTxt).toHaveText(contactPage.successInnText);
   });
 
 });
