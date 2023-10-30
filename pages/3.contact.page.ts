@@ -37,6 +37,9 @@ class ContactPage {
         await this.contactEmail.fill(email);
         await this.contactPhone.fill(phone);
         await this.contactMessage.fill(message);
+        // Before submitting let's wait a while to see how the data changes each test run
+        // eslint-disable-next-line playwright/no-wait-for-timeout
+        await this.page.waitForTimeout(3000);
         // Submit the form
         await this.submitBtn.click();
     }
