@@ -37,13 +37,13 @@ test.describe('Upload file test using created component method', () => {
         // Use the navigatreCart method
         await cartPage.navigateCart();
         // Provide the file path
-        const filePath = path.join(__dirname, '../data/solutions_result.png');
+        const filePath = path.join(__dirname, '../data/3mb_file.pdf');
         // Upload the test file using string variable from component connected to the CartPage class
         await page.setInputFiles(cartPage.uploadComponent().uploadInput, filePath);
         // Now we can click the submit button
         await cartPage.uploadComponent().submitBtn.click();
         // Here we can use our assertion to find the proper text to be displayed with timeout assertion - use the private method for our both files to make the page module visible only for the class created
-        await expect(cartPage.uploadComponent().successText).toContainText('uploaded successfully', {timeout: 4500});
+        await expect(cartPage.uploadComponent().successText).toContainText('uploaded successfully', {timeout: 40000});
         
     });
     // After creation of the methods for adding and uploading the file we can create mor readable test 
