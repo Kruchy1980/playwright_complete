@@ -34,6 +34,11 @@ export default defineConfig({
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
   reporter: 'html', // <-- type of the tests results to be displayed
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
+
+  // Here we can add the global setup which we prepared in our "global-setup file"
+  globalSetup: require.resolve('./utils/global-setup'), // That entry registers the entire global-setup file
+  // After regfistering the globalSetup we must !!! tell the playwright that we are going to be using the new state  in the use Object
+
   use: {
     /* Maximum time each action such as  `click()` can take. Defaults to 0 (no limit) */
     actionTimeout: 0,
@@ -42,6 +47,8 @@ export default defineConfig({
 
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: 'on-all-retries', // <-- Thiw parameter tesl us what exactly happened when we run the tests - explained in the file "12.Debug_Console.spec.ts"
+    // Adding entry for the refistered global Setup - here we need to add the proper file name where we want to save the data
+    storageState: 'loggedInState.json', //--> Now we can go and run our tests
   },
 
 
