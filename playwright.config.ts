@@ -48,7 +48,7 @@ export default defineConfig({
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: 'on-all-retries', // <-- Thiw parameter tesl us what exactly happened when we run the tests - explained in the file "12.Debug_Console.spec.ts"
     // Adding entry for the refistered global Setup - here we need to add the proper file name where we want to save the data
-    storageState: 'loggedInState.json', //--> Now we can go and run our tests
+    storageState: 'loggedInState.json', //--> Now we can go and run our tests from the file: "14.Signed_In_State.spec.ts"
   },
 
 
