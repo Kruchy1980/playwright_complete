@@ -15,6 +15,11 @@ async function globalSetup(config: FullConfig) {
     const page = await browser.newPage({ colorScheme: 'dark' }) // it creates our page firstly and then it do other steps assigned here  but page must be a new variable in here
     // 1. Navigate to ptopert page
     await page.goto('https://practice.sdetunicorns.com/my-account/'); // Just for the test here we need to put entire path for our page in here - do not use baseURL - until it won't be fixed
+    // Not logged in State
+    await page.context().storageState({ path: 'notLoggedInState.json'}); // The not Logged in state should be enaugh to be added here - other JSON file is created but firstly we nee to fix the file with tests: "15.Multiple_Signed_In_Roles.spec.ts".
+
+
+    //Log in State
     // 2. Fill up the login form 
     await page.locator('#username').fill('practiceuser1');
     await page.locator('#password').fill('PracticePass1!');
