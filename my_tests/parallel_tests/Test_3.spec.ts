@@ -28,7 +28,7 @@ test.describe('Upload file', () => {
             //1. Go to proper page
             await cartPage.navigateCart();
             // Provide the file path
-            const filePath = path.join(__dirname, `../data/${name}`); // here we can only use our variable from the array
+            const filePath = path.join(__dirname, `../../data/${name}`); // here we can only use our variable from the array
             // Upload the test file using string variable from component connected to the CartPage class
             await page.setInputFiles(cartPage.uploadComponent().uploadInput, filePath);
             // Now we can click the submit button
@@ -46,7 +46,7 @@ test.describe('Upload file', () => {
         // 1. Crete tests step 1 - navigate to the proper page
         await cartPage.navigateCart();
         // 2. Provide the file
-        const filePath = path.join(__dirname, '../data/solutions_result.png');
+        const filePath = path.join(__dirname, '../../data/solutions_result.png');
         // 3. Upload file using prepared method uploadFile with passed paraqmeter
         cartPage.uploadComponent().uploadFile(filePath);
         // 4. Assert the proper success text is displayed

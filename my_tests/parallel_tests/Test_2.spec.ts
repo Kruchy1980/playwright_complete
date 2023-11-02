@@ -30,7 +30,7 @@ test.describe('Upload file test using created component method', () => {
         // Use the navigatreCart method
         await cartPage.navigateCart();
         // Provide the file path
-        const filePath = path.join(__dirname, '../data/3mb_file.pdf');
+        const filePath = path.join(__dirname, '../../data/3mb_file.pdf');
         // Upload the test file using string variable from component connected to the CartPage class
         await page.setInputFiles(cartPage.uploadComponent().uploadInput, filePath);
         // Now we can click the submit button
