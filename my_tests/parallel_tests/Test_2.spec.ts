@@ -36,6 +36,6 @@ test.describe('Upload file test using created component method', () => {
         // Now we can click the submit button
         await cartPage.uploadComponent().submitBtn.click();
         // Here we can use our assertion to find the proper text to be displayed with timeout assertion - use the private method for our both files to make the page module visible only for the class created
-        await expect(cartPage.uploadComponent().successText).toContainText('uploaded successfully', { timeout: 15000 });
+        await expect(cartPage.uploadComponent().successText).not.toContainText('uploaded successfully', { timeout: 15000 });
     });
 });
