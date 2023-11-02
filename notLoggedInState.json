@@ -2,10 +2,10 @@
   "cookies": [
     {
       "name": "wp_wpfileupload_bcee46caf8128c4169fb42a56c1b36e7",
-      "value": "qSkqFS1psscsBkTmynSCOZrrwqbZFDjs",
+      "value": "pgGd2bS4TPGBNtpQAQMNDnWkw3gR4zst",
       "domain": "practice.sdetunicorns.com",
       "path": "/",
-      "expires": 1699099016.869889,
+      "expires": 1699099225.201876,
       "httpOnly": false,
       "secure": true,
       "sameSite": "Lax"
@@ -15,7 +15,7 @@
       "value": "%22%22",
       "domain": ".sdetunicorns.com",
       "path": "/",
-      "expires": 1733486219.144152,
+      "expires": 1733486427.019105,
       "httpOnly": false,
       "secure": false,
       "sameSite": "Lax"
@@ -25,7 +25,7 @@
       "value": "%22%22",
       "domain": ".sdetunicorns.com",
       "path": "/",
-      "expires": 1699185419,
+      "expires": 1699185627,
       "httpOnly": false,
       "secure": false,
       "sameSite": "Lax"
@@ -35,7 +35,7 @@
       "value": "%22%22",
       "domain": ".sdetunicorns.com",
       "path": "/",
-      "expires": 1730462219,
+      "expires": 1730462427,
       "httpOnly": false,
       "secure": false,
       "sameSite": "Lax"
