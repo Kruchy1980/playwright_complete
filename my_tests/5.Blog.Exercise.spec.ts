@@ -26,6 +26,6 @@ test.describe('Blog', () => {
 
     // assert the total length = 5
     expect(await blogPage.recentPostsList.count()).toEqual(5)
-  })
+  });
 
-})
+});
