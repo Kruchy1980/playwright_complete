@@ -7,7 +7,7 @@ import {
 } from '@playwright/test';
 
 // Here we should import our Class with Selectors from the specific path
-import HomePage from '../pages/1.home.page';
+import HomePage from '../../pages/1.home.page';
 
 // Create the test Suite for our HomePage
 test.describe('Home Page Tests', () => {
@@ -53,7 +53,7 @@ test.describe('Home Page Tests', () => {
     await page.goto('https://practice.sdetunicorns.com/');
     // 2. find the text locator firstly create variable - case insensitive matching
     // const headingText = page.locator('text=think different. Make different.'); // this matching is case insensitive
-    const headingText = await homePage.headingText;
+    const headingText = homePage.headingText;
     // 3. Verify whether heading text is visible
     await expect(headingText).toBeVisible();
     // 4. Find exact (case sensitive) locator here "<value>" -  the quotes means exact match which is case sensitive
@@ -69,22 +69,22 @@ test.describe('Home Page Tests', () => {
         await page.goto('https://practice.sdetunicorns.com/home');
         // 2. Find Home button on the page using  css id and verification via Text
         // const homeText = page.locator('#zak-primary-menu >> text=Home');
-        const homeText = await homePage.homeText_1;
+        const homeText = homePage.homeText_1;
         // 3. Verify home text is enabled
         await expect(homeText).toBeEnabled();
         // 4. Find Home button on the page using  css id and verification via Text
         // const homeText_Link = page.locator('#zak-primary-menu:has-text("Home")');
-        const homeText_Link = await homePage.homeLink;
+        const homeText_Link = homePage.homeLink;
         // 5. Verify home text is enabled
         await expect(homeText_Link).toBeEnabled();
         // 6. Find Home button on the page using  css id and verification via Text alternate way
         // const homeTextAlternate = page.locator('#zak-primary-menu:has-text("Home")');
-        const homeTextAlternate = await homePage.homeTextAlternate;
+        const homeTextAlternate = homePage.homeTextAlternate;
         // 7. Verify home text is enabled
         await expect(homeTextAlternate).toBeEnabled();
         // 8. Find Home button on the page using  css id and verification via Text - somwhere in between the element with id = zak-primary-menu
         // const homeTextAlternate_two = page.locator('#zak-primary-menu :text-is("Home")');
-        const homeTextAlternate_two = await homePage.homeTextAlternate_two;
+        const homeTextAlternate_two = homePage.homeTextAlternate_two;
         // 7. Verify home text is enabled
         await expect(homeTextAlternate_two).toBeEnabled();
     });
@@ -94,11 +94,11 @@ test.describe('Home Page Tests', () => {
       await page.goto('https://practice.sdetunicorns.com/');
       // 2. Select element "search-icon" on the page using css selector
       // const searchIcon = page.locator('#zak-masthead > div > div > div > div.zak-header-col.zak-header-col--2 > div.zak-header-actions.zak-header-actions--desktop > div.zak-header-action.zak-header-search > a > svg'); //.isVisible();
-      const searchIcon = await homePage.searchIcon;
+      const searchIcon = homePage.searchIcon;
       await expect(searchIcon).toBeVisible();
       // 3. Other verification of displayed element - variable preparation 
       // const sectionTitle = page.locator('//*[@id="primary"]/div/section[1]/div/div/div/div[1]/div/h3/div/h2/span');
-      const sectionTitle = await homePage.sectionTitle;
+      const sectionTitle = homePage.sectionTitle;
       // 4. Assertion for element with xpath locator used
       await expect(sectionTitle).toBeVisible();
       // !!5. The problem with search icon solution is to use xpath selectors
@@ -114,7 +114,7 @@ test.describe('Home Page Tests', () => {
       await page.goto('https://practice.sdetunicorns.com/');
       // 2. Find the nav links - the await is not needed for locators because it is not a promise
       // const navLinks =  page.locator('#zak-primary-menu li[id*=menu-item]');
-      const navLinks = await homePage.navLink;
+      const navLinks = homePage.navLink;
       // 3. Verify the nav links texts - the method allTextContents() returns Node list and method toEqual() compare the list with expected one. We need to wait until all of the elements show on the page so we are using await inside expect assertion because this assertion is not a promise anymore.
       expect(await navLinks.allTextContents()).toEqual(expectedLinks);
       // !! To verify specific element only we can use nth(<value of element>) as is possible in node list
@@ -133,7 +133,6 @@ test.describe('Home Page Tests', () => {
       // Printing out all the links the elementHandkes() gives access to each element of Node list
       for (const el of await navLinks.elementHandles()) {
         console.log(await el.textContent());
-        // To finish tomorrow or next day
       }
     });   
 

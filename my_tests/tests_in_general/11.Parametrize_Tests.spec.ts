@@ -11,7 +11,7 @@ import {
 
 //The Page URL Main Address: "https://practice.sdetunicorns.com/"
 // To have access to the specific component which is connected with cart.page.ts file we can us import only the part of the page file class - so CartPage class
-import CartPage from '../pages/2.cart.page';
+import CartPage from '../../pages/2.cart.page';
 
 // Prepare Test suite
 test.describe('Upload file', () => {

@@ -6,7 +6,7 @@ import {
   test,
 } from '@playwright/test';
 
-import BlogPage from '../pages/4.blog.page';
+import BlogPage from '../../pages/4.blog.page';
 
 test.describe('Blog', () => {
   let blogPage: BlogPage;

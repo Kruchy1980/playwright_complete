@@ -8,7 +8,7 @@ import {
 } from '@playwright/test';
 
 // Here we should import our Class with Selectors from the specific path
-import HomePage from '../pages/1.home.page';
+import HomePage from '../../pages/1.home.page';
 
 // Create the test Suite for our HomePage
   test.describe('Home Page Tests', () => {

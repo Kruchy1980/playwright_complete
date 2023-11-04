@@ -20,7 +20,7 @@ import {
 } from '@playwright/test';
 
 // Import contact page
-import ContactPage from '../pages/3.contact.page';
+import ContactPage from '../../pages/3.contact.page';
 
 test.describe('Contact', () => {
     let contactPage: ContactPage;
