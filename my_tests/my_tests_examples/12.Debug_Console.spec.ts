@@ -74,6 +74,7 @@ test.describe('Css_Selectors usage', () => {
     // 1. Open the page
     await page.goto('https://practice.sdetunicorns.com/contact');
     // Another way to run the playwright inspector is to use pause
+    // eslint-disable-next-line playwright/no-page-pause
     await page.pause();
     // 2. Fill out the input fields
     await page.locator('.contact-name input').fill('Test Name_Inspector')
