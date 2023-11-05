@@ -35,7 +35,14 @@ npx allure generate allure-results --clean && npx allure open  --> works only as
 It is used for attach trace to allure Reporter
 1. In the file "playwright.config.ts" in trace change to retain-on-failure
 2. Change our test to fail to see the results
-3. run the tests using allure command
+3. In the git bash use the following command:
+npx playwright test reporting_tests
+npx playwright test --> start to running the tests
+reporting tests - the folder with the specific tests (or the main folder with the tests) or if we want to run more tests we can use && operator between them eg: npx playwright test parallel_tests && reporting_tests && tests_in_general
+4. After tests exeuted run the allure command once more:
+npx allure generate allure-results --clean && npx allure open
+5. Download the trace from the result and open the file using URL: trace.playwright.dev or run the command which is displayed after tests finished using command:
+???
 */
 // Prepare any test to be executed in here and prepare reporters for being used
 // To use path we need to attach new mosule here named path
