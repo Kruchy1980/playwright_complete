@@ -1,17 +1,27 @@
 <testsuites id="" name="" tests="6" failures="0" skipped="0" errors="0" time="7.876357">
-<testsuite name="reporting_tests\1.Built-in_reporters.spec.ts" timestamp="2023-11-05T12:55:21.642Z" hostname="Google Chrome" tests="6" failures="0" skipped="0" time="33.457" errors="0">
-<testcase name="Home Page Tests - built-in reporters › Open HomePage and verify the title" classname="reporting_tests\1.Built-in_reporters.spec.ts" time="4.63">
+    <testsuite name="reporting_tests\1.Built-in_reporters.spec.ts"
+        timestamp="2023-11-05T12:55:21.642Z" hostname="Google Chrome" tests="6" failures="0"
+        skipped="0" time="33.457" errors="0">
+        <testcase name="Home Page Tests - built-in reporters › Open HomePage and verify the title"
+            classname="reporting_tests\1.Built-in_reporters.spec.ts" time="4.63">
 </testcase>
-<testcase name="Home Page Tests - built-in reporters › Clicking get Started Button" classname="reporting_tests\1.Built-in_reporters.spec.ts" time="5.657">
+        <testcase name="Home Page Tests - built-in reporters › Clicking get Started Button"
+            classname="reporting_tests\1.Built-in_reporters.spec.ts" time="5.657">
 </testcase>
-<testcase name="Home Page Tests - built-in reporters › Verify header text" classname="reporting_tests\1.Built-in_reporters.spec.ts" time="5.746">
+        <testcase name="Home Page Tests - built-in reporters › Verify header text"
+            classname="reporting_tests\1.Built-in_reporters.spec.ts" time="5.746">
 </testcase>
-<testcase name="Home Page Tests - built-in reporters › Verify home link is enabled" classname="reporting_tests\1.Built-in_reporters.spec.ts" time="6.642">
+        <testcase name="Home Page Tests - built-in reporters › Verify home link is enabled"
+            classname="reporting_tests\1.Built-in_reporters.spec.ts" time="6.642">
 </testcase>
-<testcase name="Home Page Tests - built-in reporters › Verify Search icon is visible using xpath selector and css selector" classname="reporting_tests\1.Built-in_reporters.spec.ts" time="4.046">
+        <testcase
+            name="Home Page Tests - built-in reporters › Verify Search icon is visible using xpath selector and css selector"
+            classname="reporting_tests\1.Built-in_reporters.spec.ts" time="4.046">
 </testcase>
-<testcase name="Home Page Tests - built-in reporters › Finding all elements of the list texts" classname="reporting_tests\1.Built-in_reporters.spec.ts" time="6.736">
-<system-out>
+        <testcase
+            name="Home Page Tests - built-in reporters › Finding all elements of the list texts"
+            classname="reporting_tests\1.Built-in_reporters.spec.ts" time="6.736">
+            <system-out>
 <![CDATA[Home
 About
 Shop
@@ -20,6 +30,6 @@ Contact
 My account
 ]]>
 </system-out>
-</testcase>
-</testsuite>
+        </testcase>
+    </testsuite>
 </testsuites>
