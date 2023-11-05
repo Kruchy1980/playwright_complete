@@ -27,8 +27,15 @@ Or pass the same value via config file:
 Or pass the same value via command line:
 
 npx playwright test --reporter=line,allure-playwright
+
+!!! The results added to the automatically generated folder are not user friendly so to make them more user friendly we can us command in command line of allure as shown below (Clean former result and creates new ones):
+npx allure generate allure-results --clean && npx allure open  --> works only as bash command which will  generate the proper result in allure site
 ==============================
 2. Tesults Reporter 
+It is used for attach trace to allure Reporter
+1. In the file "playwright.config.ts" in trace change to retain-on-failure
+2. Change our test to fail to see the results
+3. run the tests using allure command
 */
 // Prepare any test to be executed in here and prepare reporters for being used
 // To use path we need to attach new mosule here named path
@@ -69,7 +76,7 @@ test.describe('Upload file test using created component method', () => {
         // Now we can click the submit button
         await cartPage.uploadComponent().submitBtn.click();
         // Here we can use our assertion to find the proper text to be displayed with timeout assertion - use the private method for our both files to make the page module visible only for the class created
-        await expect(cartPage.uploadComponent().successText).toContainText('uploaded successfully', { timeout: 40000 });
+        await expect(cartPage.uploadComponent().successText).toContainText('uploaded successfully', { timeout: 10000 });
         
     });
     // After creation of the methods for adding and uploading the file we can create mor readable test 

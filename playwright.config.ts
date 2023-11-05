@@ -32,7 +32,7 @@ export default defineConfig({
   /* Opt out of parallel tests on CI. */
   workers: process.env.CI ? 1 : undefined, // <-- when used third party instance can the quantity of pararell workers be changed
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
-  reporter: [['html'], ['list'], ["allure-playwright"]],// ['junit', { outputFile: 'results.xml' }], ['blob', { outputFolder: 'jk-results'}]], // <-- type of the tests results to be displayed - more than 1 can be added as an array with one element only so it is array of arrays
+  reporter: [['line'], ["allure-playwright"]],// ['junit', { outputFile: 'results.xml' }], ['blob', { outputFolder: 'jk-results'}]], // <-- type of the tests results to be displayed - more than 1 can be added as an array with one element only so it is array of arrays
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
 
   // Here we can add the global setup which we prepared in our "global-setup file"
