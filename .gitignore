@@ -6,7 +6,7 @@ yarn-debug.log*
 yarn-error.log*
 lerna-debug.log*
 .pnpm-debug.log*
-allure-report/
+allure-report/*
 allure-results/
 
 
