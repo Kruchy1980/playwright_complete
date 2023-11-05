@@ -14,14 +14,14 @@ import {
  */
 export default defineConfig({
   testDir: './my_tests',
-  /* Maximum time one test asn run for */
+  /* Maximum time one test  run for */
   timeout: 30 * 1000, // == 30s
   expect: {
     /**
      * Maximum time expect() should wait for the condition to bve met
      * For example in `await expect(locator).toHaveText()` 
     */
-    timeout: 5000 // The timeout for waiting for aawit to be expected for action in assertion section
+    timeout: 5000 // The timeout for waiting for await to be expected for action in assertion section
   },
   /* Run tests in files in parallel */
   fullyParallel: true, // <-- runs each individual test in pararell mode 
@@ -32,7 +32,7 @@ export default defineConfig({
   /* Opt out of parallel tests on CI. */
   workers: process.env.CI ? 1 : undefined, // <-- when used third party instance can the quantity of pararell workers be changed
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
-  reporter: 'html', // <-- type of the tests results to be displayed
+  reporter: [['html'], ['list']], // <-- type of the tests results to be displayed - more than 1 can be added as an array with one element only so it is array of arrays
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
 
   // Here we can add the global setup which we prepared in our "global-setup file"
