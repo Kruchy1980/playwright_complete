@@ -2,7 +2,7 @@
   "cookies": [
     {
       "name": "wordpress_sec_bcee46caf8128c4169fb42a56c1b36e7",
-      "value": "practiceuser1%7C1699360813%7CM64Pw9HgMntMnWmG3JfsXOzNdemnARz42BLEZ7yJGlm%7Ceb744f7d0754ce1fae6886c4c91d9a566422b8c28305b402d5ff2173f5f65abf",
+      "value": "practiceuser1%7C1699361719%7CqeBm4xrnFLbtSpAS6wKYcXDzL08WRsurV7SN4DuXCfs%7C7ce549387a6cb8907afa68f8a0062a45057ba1a0ff4fefbb3c88644075808ae7",
       "domain": "practice.sdetunicorns.com",
       "path": "/wp-content/plugins",
       "expires": -1,
@@ -12,7 +12,7 @@
     },
     {
       "name": "wordpress_sec_bcee46caf8128c4169fb42a56c1b36e7",
-      "value": "practiceuser1%7C1699360813%7CM64Pw9HgMntMnWmG3JfsXOzNdemnARz42BLEZ7yJGlm%7Ceb744f7d0754ce1fae6886c4c91d9a566422b8c28305b402d5ff2173f5f65abf",
+      "value": "practiceuser1%7C1699361719%7CqeBm4xrnFLbtSpAS6wKYcXDzL08WRsurV7SN4DuXCfs%7C7ce549387a6cb8907afa68f8a0062a45057ba1a0ff4fefbb3c88644075808ae7",
       "domain": "practice.sdetunicorns.com",
       "path": "/wp-admin",
       "expires": -1,
@@ -22,10 +22,10 @@
     },
     {
       "name": "wp_wpfileupload_bcee46caf8128c4169fb42a56c1b36e7",
-      "value": "kjf2TSYKPxReBtcGsTMOCwWGG5SAA8tp",
+      "value": "Tg9FsSsh7ygAwdHeyYsF3Z8zqgnB5yyP",
       "domain": "practice.sdetunicorns.com",
       "path": "/",
-      "expires": 1699360811.402746,
+      "expires": 1699361717.072203,
       "httpOnly": false,
       "secure": true,
       "sameSite": "Lax"
@@ -35,7 +35,7 @@
       "value": "%22%22",
       "domain": ".sdetunicorns.com",
       "path": "/",
-      "expires": 1733748013.163236,
+      "expires": 1733748918.638789,
       "httpOnly": false,
       "secure": false,
       "sameSite": "Lax"
@@ -45,7 +45,7 @@
       "value": "%22%22",
       "domain": ".sdetunicorns.com",
       "path": "/",
-      "expires": 1699447213,
+      "expires": 1699448118,
       "httpOnly": false,
       "secure": false,
       "sameSite": "Lax"
@@ -55,14 +55,14 @@
       "value": "%22%22",
       "domain": ".sdetunicorns.com",
       "path": "/",
-      "expires": 1730724013,
+      "expires": 1730724918,
       "httpOnly": false,
       "secure": false,
       "sameSite": "Lax"
     },
     {
       "name": "wordpress_logged_in_bcee46caf8128c4169fb42a56c1b36e7",
-      "value": "practiceuser1%7C1699360813%7CM64Pw9HgMntMnWmG3JfsXOzNdemnARz42BLEZ7yJGlm%7C8de3ef6ac6637e4d4ba7596aa00199941b4b30a7bf014e30c3d50c4eda5b5b8c",
+      "value": "practiceuser1%7C1699361719%7CqeBm4xrnFLbtSpAS6wKYcXDzL08WRsurV7SN4DuXCfs%7C362eeee499d22182320fc474e17e29020db1b2e2f33315989a09d6d2d33048e4",
       "domain": "practice.sdetunicorns.com",
       "path": "/",
       "expires": -1,
@@ -92,10 +92,10 @@
     },
     {
       "name": "wp_woocommerce_session_bcee46caf8128c4169fb42a56c1b36e7",
-      "value": "175%7C%7C1699360815%7C%7C1699357215%7C%7Cc5ef0a60b74a0c6a854e7a4d904dc214",
+      "value": "175%7C%7C1699361720%7C%7C1699358120%7C%7C20dea3550e4755f3c3c9cef18ad8b07c",
       "domain": "practice.sdetunicorns.com",
       "path": "/",
-      "expires": 1699360815.993959,
+      "expires": 1699361721.517077,
       "httpOnly": true,
       "secure": true,
       "sameSite": "Lax"
