@@ -7,6 +7,7 @@ import {
 } from '@playwright/test';
 
 // The function preparation
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 async function globalSetup(config: FullConfig) {
     // Here copy our script from ghe BeforAll Hook method
     // The browser is needed in here but to make it visible we need to create new variable which will be dedicated to the proper browser
