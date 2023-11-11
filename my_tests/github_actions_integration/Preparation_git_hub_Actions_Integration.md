@@ -49,5 +49,24 @@ jobs:
 **5.** Push the file to the GitHub repository
 **6.** Now we can check how it looks in our GitHub - so go to our repository and press the yellow status circle to see how it behaves in GitHub
 
+#### INTEGRATE REPORTING IN THE WORKFLOW
+1. In the file **playwright.yml** add next field as following:
+```
+      if: always()
+      # with:
+      #   name: playwright-report
+      #   path: playwright-report/
+      #   retention-days: 30
+      with:
+        name: Test-results
+        path: test-results
+        retention-days: 30
+```
+2. Go to playwright.config.ts and change the reporter to:
+```
+ reporter: [['line'], ["allure-playwright", {outputFolder: 'test-results'}]],
+```
+
+
 
 
