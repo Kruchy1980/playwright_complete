@@ -56,16 +56,23 @@ jobs:
       # with:
       #   name: playwright-report
       #   path: playwright-report/
-      #   retention-days: 30
+      #   retention-days: 30 (optional)
       with:
         name: Test-results
         path: test-results
-        retention-days: 30
+        retention-days: 30 (optional)
 ```
 2. Go to playwright.config.ts and change the reporter to:
 ```
  reporter: [['line'], ["allure-playwright", {outputFolder: 'test-results'}]],
 ```
+3. When zipped file downlaoaded and extracted to our project folder than
+use the command in git bash terminal: npx allure generate **unzipped report folder** clean && npx allure open
+eg: npx allure generate test-results clean && npx allure open
+4. Alternate method is to open the zip file directly on the URL:  **https://trace.playwright.dev/** by opening the file on the page
+
+#### ABOUT FIXING BROKEN TEST & RERUN WORKFLOW
+We need to correct the broken test manually using directions from the playwright report.
 
 
 

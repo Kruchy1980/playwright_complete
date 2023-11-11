@@ -35,7 +35,7 @@ class HomePage {
         this.homeLink = page.locator('#zak-primary-menu:has-text("Home")');
         // this.homeLink = page.locator('#zak-primary-menu >> text=Home');
         this.searchIcon = page.locator('#zak-masthead > div > div > div > div.zak-header-col.zak-header-col--2 > div.zak-header-actions.zak-header-actions--desktop > div.zak-header-action.zak-header-search > a > svg');
-        this.searchIconAlt = page.locator('//*[@id="zak-masthead"]/div/div/div/div[2]/div[1]/div[1]/a/svg');
+        this.searchIconAlt = page.locator('//*[@id="zak-masthead"]//*[@class="zak-header-search__toggle"]//*[@class="zak-icon zakra-icon--magnifying-glass"]');
         this.navLink = page.locator('#zak-primary-menu li[id*=menu-item]');
         this.cSensitiveHeadingText = page.locator('text="Think different. Make different."');
         this.homeText_1 = page.locator('#zak-primary-menu >> text=Home');

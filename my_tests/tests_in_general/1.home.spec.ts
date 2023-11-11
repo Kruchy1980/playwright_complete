@@ -148,11 +148,11 @@ test.describe('Home Page Tests', () => {
     // !! To verify specific element only we can use nth(<value of element>) as is possible in node list
     // 4. Prepare locator for the 4th element "Contact" in the list - one specific element only
     // const navSpecificLinkText = page.locator('#zak-primary-menu li[id*=menu-item]').nth(4);
-    const navSpecificLinkText = navLinks.nth(4);
+    const navSpecificLinkText = navLinks.nth(3);
     // 5. Prepare verification of the specific element name
-    await expect(navSpecificLinkText).toHaveText('Contacted');
+    await expect(navSpecificLinkText).toHaveText('Blog');
     //OR
-    await expect(navSpecificLinkText).toHaveText(expectedLinks[4]);
+    await expect(navSpecificLinkText).toHaveText(expectedLinks[3]);
     // So we can use loop to verify simple elements content
     for (let i = 0; i < expectedLinks.length; i++) {
       const allElementsSingulary = page.locator('#zak-primary-menu li[id*=menu-item]').nth(i);
