@@ -102,10 +102,10 @@ test.describe('Home Page Tests', () => {
     // 4. Assertion for element with xpath locator used
     await expect(sectionTitle).toBeVisible();
     // !!5. The problem with search icon solution is to use xpath selectors
-    // const searchIcon = page.locator('//*[@id="zak-masthead"]/div/div/div/div[2]/div[1]/div[1]/a/svg');
-    // const searchIconAlt = await homePage.searchIconAlt;
-    // // // II6. Assertion try
-    // await expect(searchIconAlt).toBeVisible();
+    // const searchIconAlt = page.locator('//*[@id="zak-masthead"]/div/div/div/div[2]/div[1]/div[1]/a/svg');
+    const searchIconAlt = homePage.searchIconAlt;
+    // // II6. Assertion try
+    await expect(searchIconAlt).toBeVisible();
   });
   test('Finding all elements of the list texts', async ({ page }) => {
     // !! homePage preparation
