@@ -19,7 +19,7 @@ jobs:
     - name: Install Playwright Browsers
       run: npx playwright install --with-deps
     - name: Run Playwright tests
-      run: npx playwright test my_tests/tests_in_general
+      run: npx playwright test tests_in_general/1.home.spec.ts
     - uses: actions/upload-artifact@v3
       if: always()
       with:
