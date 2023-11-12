@@ -12,7 +12,7 @@ class CartPage {
     // Constructor with page object only
     constructor(page: Page) {
         this.page = page;
-    };
+    }
     // We can add navigate method for navigating to the proper page
     async navigateCart() {
         await this.page.goto('/cart/'); 
@@ -22,7 +22,7 @@ class CartPage {
     uploadComponent() {
         // Returning instance of component which is prepared for uploading files 
         return new UploadComponent(this.page);
-    };
+    }
     // We can add the proper methods in here - methods for adding and uploading the file
 }
 

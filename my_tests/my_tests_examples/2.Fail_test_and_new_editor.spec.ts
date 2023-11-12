@@ -13,19 +13,19 @@ import {
 // Set up the Test set for our tests
 test.describe('Failed - Negative path', () => {
     //1. Firts negative path test preparation
-    test('Failed tritle verifcation', async ({ page }) => {
+    test('Failed title verifcation', async ({ page }) => {
         //1. Go to the specific page
         await page.goto('https://practice.sdetunicorns.com/');
         //2. Create failed assertion for title
         await expect(page).toHaveTitle('Failed title in here')
     }); 
   // Let's fix the test
-  test('Proper title positive path', async ({ page }) => {
-      // 1. Go to the specific page
-      await page.goto('https://practice.sdetunicorns.com/');
-      // 2. Create assertion of proper title
-      await expect(page).toHaveTitle('Practice E-Commerce Site – SDET Unicorns – Helping you succeed in Software Quality.');
-  });
+    test('Proper title positive path', async ({ page }) => {
+        // 1. Go to the specific page
+        await page.goto('https://practice.sdetunicorns.com/');
+        // 2. Create assertion of proper title
+        await expect(page).toHaveTitle('Practice E-Commerce Site – SDET Unicorns – Helping you succeed in Software Quality.');
+    });
 
 });
 /*

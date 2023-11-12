@@ -1,7 +1,7 @@
 // Import the main Playwright modules
 import {
-    expect,
-    test,
+  expect,
+  test,
 } from '@playwright/test';
 
 // Here we should import our Class with Selectors from the specific path

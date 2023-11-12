@@ -72,5 +72,4 @@ test.describe.serial('Account Verification - more testes', () => {
         // 2. Vwerify proper URL is displayed
         await expect(page).toHaveURL(/.*edit-address/, { timeout: 20000 });
     })
-
 });

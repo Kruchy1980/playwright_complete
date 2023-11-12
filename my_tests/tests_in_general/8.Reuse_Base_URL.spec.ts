@@ -8,6 +8,11 @@
     baseURL: 'https://practice.sdetunicorns.com/', <-- !!! Here we are using our specific homepage URL
 
     // Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer 
-    trace: 'on', // <-- Thiw parameter tesl us what exactly happened when we run the tests - explained in the file "12.Debug_Console.spec.ts"
+    trace: 'on', // <-- This parameter tesl us what exactly happened when we run the tests - explained in the file "12.Debug_Console.spec.ts"
   },
+!!! No we can go to our pages files and change our urt to specific one
+See files: 
+-home.page.ts
+-cart.page.ts
+--- Add another 2 when created
 */

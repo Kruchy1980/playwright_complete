@@ -16,7 +16,7 @@ test.describe('Text Selectors', () => {
     const headingText = page.locator('text=think different. Make different.'); // this matching is case insensitive
     // 3. Verify whether heading text is visible
     await expect(headingText).toBeVisible();
-    // 4. Find exact (case sensitive) locator here "<vqalue>" -  the quotes means exact match which is case sensitive
+    // 4. Find exact (case sensitive) locator here "<value>" -  the quotes means exact match which is case sensitive
     const cSensitiveHeadingText = page.locator('text="Think different. Make different."');
     // 5. Verify the case sensitive header text
     await expect(cSensitiveHeadingText).toBeVisible();
