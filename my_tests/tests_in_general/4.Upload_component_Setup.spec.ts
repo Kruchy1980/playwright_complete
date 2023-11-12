@@ -51,7 +51,7 @@ test.describe('Upload file test using created component method', () => {
     2. Connect the method with proper CarrPage class
     3. Create the test using prepared methods 
     */
-    test('Upload the file usind prepared methods in component Class', async ({ page }) => {
+    test('Upload the file using prepared methods in component Class', async ({ page }) => {
         // Remember to create the proper instaqnce as first step
         cartPage = new CartPage(page);
         // 1. Crete tests step 1 - navigate to the proper page
